@@ -26,7 +26,12 @@ class SAML2_SOAPClient
 
         $ctxOpts = array(
             'ssl' => array(
-                'capture_peer_cert' => TRUE,
+                'verify_peer' => true,
+                'verify_peer_name' => true,
+                'capture_peer_cert' => true,
+                'verify_depth' => 5,
+                'peer_name' => 'as.ite.logon.realme.govt.nz',
+                'cafile' => 'mysite/certificate-bundle.pem'
             ),
         );
 
